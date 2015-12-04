@@ -6,5 +6,5 @@ First official meeting of the Mercury 2016 team. Six leaders met to discuss gene
 The strategies decided upon were fed from lessons learned of the 2015 Mercury team.
 
 * Forward bias all coding tasks for longer testing and integration times
-* Implement two separate timelines for Mercury administrative processes and Mercury robotic design
+* Implement two timelines for Mercury administrative processes and robot design milestones
 * Reduce lead times on ordering parts
