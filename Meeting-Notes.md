@@ -10,6 +10,8 @@ The strategies decided upon were fed from lessons learned of the 2015 Mercury te
 * Reduce lead times on ordering parts
 * Constrain design teams to predefined requirements. 
 
-The team decided to constrain electronic hardware to an Arduino and Raspberry Pi (subject to change) and software to ROS libraries. 
+The team decided to constrain electronic hardware to an Arduino and a Raspberry Pi and software to ROS libraries (subject to change). 
+
+___
 
 ### NEXT MEETING
