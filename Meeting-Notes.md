@@ -1,5 +1,6 @@
 This page documents the meeting dates and important decisions made during 2016 Mercury Robotics Competition.
 
+___
 ### 4 Dec 15
 
 First official meeting of the Mercury 2016 team. Six leaders met to discuss general strategies for the upcoming competition.
