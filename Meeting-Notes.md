@@ -7,6 +7,9 @@ The strategies decided upon were fed from lessons learned of the 2015 Mercury te
 
 * Forward bias all coding tasks for longer testing and integration times
 * Implement two timelines for Mercury administrative processes and robot design milestones
-* Reduce lead times on ordering parts   
+* Reduce lead times on ordering parts
+* Constrain design teams to predefined requirements. 
+
+The team decided to constrain electronic hardware to an Arduino and Raspberry Pi (subject to change) and software to ROS libraries. 
 
 ### NEXT MEETING
