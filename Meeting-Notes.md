@@ -3,6 +3,8 @@ This page documents the meeting dates and important decisions made during 2016 M
 ### 4 Dec 15
 
 First official meeting of the Mercury 2016 team. 6 leaders met to discuss general strategies for the upcoming competition.
-The strategies decided from lessons learned from the 2015 team.
+The strategies decided upon were fed from lessons learned of the 2015 Mercury team.
 
-* We
+* Forward bias all coding tasks for longer testing and integration times
+* Implement two separate timelines for Mercury administrative processes and Mercury robotic design
+* Reduce lead times on ordering parts
