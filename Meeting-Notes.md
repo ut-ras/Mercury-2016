@@ -24,6 +24,7 @@ Roles Preliminary Discussion
 * Committee Lead: Hasun 
 * Software Lead: Selma Wanna
 * Mechanical Lead: Judson Daniels
+* Embedded Lead: Margaret Timbukon
 
 ___
 
