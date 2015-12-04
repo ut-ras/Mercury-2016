@@ -28,6 +28,5 @@ Roles Preliminary Discussion
 
 ___
 
-### NEXT MEETING
-
+### 22 Jan 16
 ___
