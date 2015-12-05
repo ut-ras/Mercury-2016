@@ -16,8 +16,8 @@ The strategies decided upon were fed from lessons learned of the 2015 Mercury te
 The team decided to constrain electronic hardware to an Arduino and a Raspberry Pi and software to ROS libraries (subject to change). 
 
 **Preliminary Deadlines Discussion**
-+ 22 JAN: Milestones ready
-+ 29 JAN: All ROS packages installed; Loss of Signal; Order motors; Order camera;
++ 22 JAN: Milestones ready; Introduction; Order camera
++ 29 JAN: All ROS packages installed; Loss of Signal; Order motors & wheels; Board integration;
 + 05 FEB: MechCheck 1: Design Review 1   
  
 **Roles Preliminary Discussion**
