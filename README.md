@@ -53,11 +53,11 @@ There will always be more work to be done for Mercury. We should not use the exc
 
 #### Checkpoint Timeline
 
-| Date   | Checkpoint Name  | Description                                 | Notes                   |
-| ------ | ---------------  | ------------------------------------------- | ----------------------- |
-| 22 Jan | Introduction     |                                             | Complete                |
-| 29 Jan | MS.SW.001        | ROS packages installed, Loss of Signal test | Incomplete              |
-|        | PR.ME.001        | Motors and wheels                           | Incomplete              |
-|        | PR.ES.001        | Camera, board should arrive                 | _Being discussed_       |
-| 05 Feb | DR.ME.001        | Covers preliminary chassis and arm design   | Incomplete              | 
-|        | MS_SW_002        | TBD                                         | TBD                     |
+| Date   | Checkpoint   | Description                                 | Notes                   |
+| ------ | ------------ | ------------------------------------------- | ----------------------- |
+| 22 Jan | Introduction |                                             | Complete                |
+| 29 Jan | MS.SW.001    | ROS packages installed, Loss of Signal test | Incomplete              |
+|        | PR.ME.001    | Motors and wheels                           | Incomplete              |
+|        | PR.ES.001    | Camera, board should arrive                 | _Being discussed_       |
+| 05 Feb | DR.ME.001    | Covers preliminary chassis and arm design   | Incomplete              | 
+|        | MS.SW.002    | TBD                                         | TBD                     |
