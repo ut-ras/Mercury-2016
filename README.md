@@ -34,18 +34,30 @@ __Notice:__ we are looking for someone with audio/visual experience to lead the 
 
 ## Project Timeline
  
-A mistaken student once said:
+####A mistaken student once said:
 
 > I don't know what I could be working on.
 
 There will always be more work to be done for Mercury. We should not use the excuse of waiting on someone else to do our own part for the team. I believe we can deliver a successful product on time if we avoid this mentality. Therefore, although subject to change, this section should provide a tentative summmary for our team's development progress.
 
+#### Checkpoint Legend
+
+| Code | Identifier    | Description                                                               |
+| ---- | ------------- | ------------------------------------------------------------------------- |
+| MS   | Milestone     | Major progress checkpoint in development that can be verified             |
+| PR   | Purchase      | Parts and supplied should be purchased on or before the specified date    |
+| DR   | Design Review | Design proposal presented at meetings to generate feedback and discussion |
+| SW   | Software      | Pertaining to the software design and implementation team                 |
+| ME   | Mechanical    | Pertaining to the mechanical design and implementation team               |
+| ES   | Embedded      | Pertaining to the embedded systems and integration team                   |
+
+#### Checkpoint Timeline
+
 | Date   | Checkpoint Name  | Description                                 | Notes                   |
 | ------ | ---------------  | ------------------------------------------- | ----------------------- |
 | 22 Jan | Introduction     |                                             | Complete                |
-| 29 Jan | ROS Installation | ROS packages installed                      | Incomplete              |
-|        | LOS Test         | Loss of signal test                         | Incomplete              |
-|        | Purchase ME_001  | Motors and wheels                           | Incomplete              |
-|        | Purchase SW_001  | Camera, board should arrive                 | _Being discussed_       |
-| 05 Feb | MechCheck 1      | Covers preliminary chassis and arm design   | Incomplete              | 
-|        | SoftCheck 1      | TBD                                         | TBD                     |
+| 29 Jan | MS.SW.001        | ROS packages installed, Loss of Signal test | Incomplete              |
+|        | PR.ME.001        | Motors and wheels                           | Incomplete              |
+|        | PR.ES.001        | Camera, board should arrive                 | _Being discussed_       |
+| 05 Feb | DR.ME.001        | Covers preliminary chassis and arm design   | Incomplete              | 
+|        | MS_SW_002        | TBD                                         | TBD                     |
