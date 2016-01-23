@@ -1,5 +1,6 @@
 # Mercury 2016
-_insert picture or logo here_
+
+![Sweet logo brah](http://ras.ece.utexas.edu/static/images/logo.png)
 
 ## Introduction
 Welcome to the University of Texas IEEE Robotics and Automation Society page for the 2016 Mercury Remote Robot Challenge!
@@ -21,8 +22,6 @@ Please contact __Judson Daniels__ or __Luke Chou__ to be added as a contributor.
 ## Team Members
 
 The Mercury team is made of several members of the UT Robotics and Automation Society. The table below documents team leaders for Mercury 2016 for communication purposes.
-
-[[members]]
 
 | Name              | Area Responsible | 
 | ----------------- | ---------------- |
