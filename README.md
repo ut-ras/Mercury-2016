@@ -42,14 +42,14 @@ There will always be more work to be done for Mercury. We should not use the exc
 
 #### Checkpoint Legend
 
-| Code | Identifier    | Description                                                               |
-| ---- | ------------- | ------------------------------------------------------------------------- |
-| MS   | Milestone     | Major progress checkpoint in development that can be verified             |
-| PR   | Purchase      | Parts and supplied should be purchased on or before the specified date    |
-| DR   | Design Review | Design proposal presented at meetings to generate feedback and discussion |
-| SW   | Software      | Pertaining to the software design and implementation team                 |
-| ME   | Mechanical    | Pertaining to the mechanical design and implementation team               |
-| ES   | Embedded      | Pertaining to the embedded systems and integration team                   |
+| Code       | Identifier    | Description                                                               |
+| ---------- | ------------- | ------------------------------------------------------------------------- |
+| _MS_.XX.XX   | Milestone     | Major progress checkpoint in development that can be verified             |
+| PR.XX.XX   | Purchase      | Parts and supplied should be purchased on or before the specified date    |
+| DR.XX.XX   | Design Review | Design proposal presented at meetings to generate feedback and discussion |
+| XX.SW.XX   | Software      | Pertaining to the software design and implementation team                 |
+| XX.ME.XX   | Mechanical    | Pertaining to the mechanical design and implementation team               |
+| XX.ES.XX   | Embedded      | Pertaining to the embedded systems and integration team                   |
 
 #### Checkpoint Timeline
 
