@@ -11,12 +11,19 @@
 Welcome to the University of Texas IEEE Robotics and Automation Society page for the 2016 Mercury Remote Robot Challenge!
 The purpose of this page is to document progress and code for the 2016 Mercury team.
 
-### Becoming a Contributor
+__Becoming a Contributor__
+
 In order to push code to this repository, you must be added as a contributor by the administrator for this git. Please contact [Judson Daniels] or [Luke Chou] to be added as a contributor.
 
-### Official Mercury Rules
-The official rules and documentation for the Mercury robotics challenge can be found within the team [Google Drive]( https://drive.google.com/folderview?id=0B1K3QXwfZ4aoUG10X3B3WUM3NjQ&usp=sharing) folder.
-More information can be found on the [OSU Mercury Website](https://mercury.okstate.edu/)
+__Mercury Google Drive__
+
+The Google Drive folder contains supporting information like budget sheets, planning, and official rules documentation.
+Link to [Google Drive]( https://drive.google.com/folderview?id=0B1K3QXwfZ4aoUG10X3B3WUM3NjQ&usp=sharing).
+
+__Official Mercury Website__
+
+This OSU website containts more information about the Mercury competition. Note that you are leaving the UT RAS Mercury development space by clicking this link: 
+[OSU Mercury Website](https://mercury.okstate.edu/).
 
 ## Team Members
 * Hasun Amarasekara
@@ -25,6 +32,7 @@ More information can be found on the [OSU Mercury Website](https://mercury.oksta
 * Margaret Tumbokon
 
 __Notice__
+
 The team is looking for a leader with audio/visual experience willing to develop the video presentation associated with the 2016 Mercury robot.
 
 ## Project Timeline
