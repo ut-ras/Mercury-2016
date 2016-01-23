@@ -37,6 +37,7 @@ __Notice:__ we are looking for someone with audio/visual experience to lead the 
 ####A student once said:
 
 > I don't know what I could be working on.
+>
 > I am waiting for someone else to finish their part.
 
 Don't make these mistakes! There will always be more work to be done for Mercury. We can deliver a successful product on time if we avoid this mentality. I believe that through better communication of our goals and expectations, we can deliver a successful product on time. As a result, this section should provide a tentative summmary for tracking our team's progress.
