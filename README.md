@@ -38,8 +38,14 @@ A mistaken student once said:
 
 > I don't know what I could be working on.
 
-There will always be more work to be done for Mercury. We should not use the excuse of waiting on someone else to do our own part for the team. I believe we can deliver a successful product on time if we avoid this mentality. Therefore, although subject to change, this section should provide a tentative summmary for our team's development process.
+There will always be more work to be done for Mercury. We should not use the excuse of waiting on someone else to do our own part for the team. I believe we can deliver a successful product on time if we avoid this mentality. Therefore, although subject to change, this section should provide a tentative summmary for our team's development progress.
 
-| Date   | Checkpoint Name | Description | Notes |
-| ------ | --------------- | ----------- | ----- |
-| 22 JAN | Introduction    | ----------- | ----- |
+| Date   | Checkpoint Name  | Description                                 | Notes                   |
+| ------ | ---------------  | ------------------------------------------- | ----------------------- |
+| 22 Jan | Introduction     |                                             | Complete                |
+| 29 Jan | ROS Installation | ROS packages installed                      | Incomplete              |
+|        | LOS Test         | Loss of signal test                         | Incomplete              |
+|        | Purchase ME_001  | Motors and wheels                           | Incomplete              |
+|        | Purchase SW_001  | Camera, board should arrive                 | _Being discussed_       |
+| 05 Feb | MechCheck 1      | Covers preliminary chassis and arm design   | Incomplete              | 
+|        | SoftCheck 1      | TBD                                         | TBD                     |
