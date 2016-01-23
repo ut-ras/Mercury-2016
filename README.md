@@ -1,7 +1,6 @@
 ---
 
-![Sweet logo brah](http://ras.ece.utexas.edu/static/images/logo.png)
-# Mercury 2016
+![Sweet logo brah](http://ras.ece.utexas.edu/static/images/logo.png) # Mercury 2016
 
 ## Introduction
 Welcome to the University of Texas IEEE Robotics and Automation Society page for the 2016 Mercury Remote Robot Challenge!
