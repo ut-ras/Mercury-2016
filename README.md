@@ -40,7 +40,7 @@ __Notice:__ we are looking for someone with audio/visual experience to lead the 
 >
 > I am waiting for someone else to finish their part.
 
-Don't make these mistakes! There will always be more work to be done for Mercury. We can deliver a successful product on time if we avoid this mentality. I believe that through better communication of our goals and expectations, we can deliver a successful product on time. As a result, this section should provide a tentative summmary for tracking our team's progress.
+Don't make these mistakes! We must avoid these mentalities since there will always be more work to be done for Mercury. I believe that through better communication of our goals and expectations we can deliver a successful product on time. As a result, this section should provide a tentative summmary for tracking our team's progress.
 
 #### Checkpoint Legend
 
