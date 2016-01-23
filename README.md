@@ -44,12 +44,12 @@ There will always be more work to be done for Mercury. We should not use the exc
 
 | Code       | Identifier    | Description                                                               |
 | ---------- | ------------- | ------------------------------------------------------------------------- |
-| __MS__.XX.XX   | Milestone     | Major progress checkpoint in development that can be verified             |
-| __PR__.XX.XX   | Purchase      | Parts and supplied should be purchased on or before the specified date    |
-| __DR__.XX.XX   | Design Review | Design proposal presented at meetings to generate feedback and discussion |
-| XX.__SW__.XX   | Software      | Pertaining to the software design and implementation team                 |
-| XX.__ME__.XX   | Mechanical    | Pertaining to the mechanical design and implementation team               |
-| XX.__ES__.XX   | Embedded      | Pertaining to the embedded systems and integration team                   |
+| __MS__.XX.##   | Milestone     | Major progress checkpoint in development that can be verified             |
+| __PR__.XX.##   | Purchase      | Parts and supplied should be purchased on or before the specified date    |
+| __DR__.XX.##   | Design Review | Design proposal presented at meetings to generate feedback and discussion |
+| XX.__SW__.##   | Software      | Pertaining to the software design and implementation team                 |
+| XX.__ME__.##   | Mechanical    | Pertaining to the mechanical design and implementation team               |
+| XX.__ES__.##   | Embedded      | Pertaining to the embedded systems and integration team                   |
 
 #### Checkpoint Timeline
 
