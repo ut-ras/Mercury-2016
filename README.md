@@ -62,5 +62,9 @@ Don't make these mistakes! We must avoid these mentalities since there will alwa
 |        | PR.ME.001    | Motors and wheels                           | Incomplete                              |
 |        | PR.ES.001    | Camera, board should arrive                 | _In discussion_                         |
 | 05 Feb | DR.ME.001    | Covers preliminary chassis and arm design   | Incomplete                              | 
-|        | MS.SW.002    | TBD                                         | TBD                                     |
-
+| 27 Feb | MS.SW.002	| Software design finalized					  | Software layers defined, begin coding   |
+| 		 | MS.ME.001    | All mechanical designs finalized			  | Review all designs, begin construction  |
+|		 | MS.ES.002	| TBD 										  | 										|	
+| 18 Mar | MS.SW.003	| Software build Complete  					  |											|
+|		 | MS.ME.002    | Build finished, begin testing  			  |											|
+| 16 Apr | Competition  |											  |											|
