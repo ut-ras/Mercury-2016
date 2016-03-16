@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from bottle import route, request, run, get
 # import serial
 # import time
@@ -30,10 +31,64 @@ $(document).ready(function() {
     });
     console.log( "The switch was flipped" );
     });
+
+    
+     $(window).keyup(function(event){
+    var keyCode = event.keyCode;
+    if (keyCode == 87)
+    {
+        $("#wbutton").button({
+               disabled:false
+            }); 
+    }
+    });
   
     $(window).keydown(function(event){
     var keyCode = event.keyCode;
-    alert(event.keyCode);
+    document.getElementById("throughput").value = keyCode;
+    if (keyCode == 73)
+    {
+    var leftspeed = parseInt(document.getElementById("leftspeed").value);
+    if (leftspeed < 9)
+    {
+        document.getElementById("leftspeed").value = leftspeed + 1;
+    }
+    }
+    
+    if (keyCode ==75)
+    {
+    var leftspeed = parseInt(document.getElementById("leftspeed").value);
+    if (leftspeed > 0)
+    {
+        document.getElementById("leftspeed").value = leftspeed - 1;
+    }
+    }
+    
+    if (keyCode == 76)
+    {
+    var rightspeed = parseInt(document.getElementById("rightspeed").value);
+    if (rightspeed < 9)
+    {
+        document.getElementById("rightspeed").value = rightspeed + 1;
+    }
+    }
+    
+    if (keyCode == 74)
+    {
+    var rightspeed = parseInt(document.getElementById("rightspeed").value);
+    if (rightspeed > 0)
+    {
+        document.getElementById("rightspeed").value = rightspeed - 1;
+    }
+    }
+    
+    if (keyCode == 87)
+    {
+        $("#wbutton").button({
+               disabled:true
+            }); 
+    }
+    //alert(event.keyCode);
     $.ajax({
                 url: '/action',
                 type: 'POST',
@@ -41,10 +96,7 @@ $(document).ready(function() {
         });
     });
  
-
 });
-
-
 </script>
 </head>
 <body>
@@ -54,6 +106,19 @@ $(document).ready(function() {
         <label for="switch">Simple Motor Control</label>
         <input type="checkbox" data-role="flipswitch" name="switch" id="ckLED">
     </form>
+    <form>
+        <label for="switch">Throughput</label>
+        <input type="textbox" id="throughput">
+    </form>
+        <form>
+        <label for="switch">Left Speed</label>
+        <input type="textbox" id="leftspeed" value=0>
+    </form>
+    <form>
+        <label for="switch">Right Speed</label>
+        <input type="textbox" id="rightspeed" value=0>
+    </form>
+    <button id="wbutton">W</button>
  </div>
 </div>
 </body>
@@ -63,14 +128,16 @@ $(document).ready(function() {
 @route('/action', method='POST')
 def action():
     val = request.forms.get('strState')
+    val2 = request.forms.get('strState2')
     keyCode = request.forms.get('keyPressed')
-    on = bool(int(val))
-    print on
-    print keyCode
+    #on = bool(int(val))
+    #print bool(int(val2))
+    #print on
+    #print keyCode
 
  	
-	ser.write('r(0-9),')
-    ser.write('l(0-9)')
+	#ser.write('r(0-9),')
+    #ser.write('l(0-9)')
  
 
 run(host='localhost', port=8000)
