@@ -4,19 +4,18 @@ import threading
 import subprocess
 # import serial
 import time
-# from bottle import route, run, template
 # import io
-# import sys
+import sys
 # import picamera
 
 # camera = picamera.PiCamera()
 # ser = serial.Serial('/dev/ttyUSB0',9600)
 
-CODE = './code.html'
+CODE_FILE = './code.html'
 
 @route('/control')
-def contro():
-    f = open(CODE, 'r')
+def control():
+    f = open(CODE_FILE, 'r')
     code = ""
     for line in f:
         code += line
@@ -27,8 +26,8 @@ def action():
     val = request.forms.get('strState')
     val2 = request.forms.get('strState2')
     keyCode = request.forms.get('keyPressed')
- 	
-	#ser.write('r(0-9),')
+
+    #ser.write('r(0-9),')
     #ser.write('l(0-9)')
 
 def startWebsiteThread():
@@ -37,10 +36,10 @@ def startWebsiteThread():
     thread.start()
 
 def pingGoogle():
-    process = subprocess.Popen("ping -c 2 -q www.google.com", stdout=subprocess.PIPE, \
+    process = subprocess.Popen("ping -c 2 -q www.google.com > /dev/null && echo $?", stdout=subprocess.PIPE, \
                                stderr=subprocess.STDOUT, shell=True)
     (out, err) = process.communicate()
-    if "0.0% packet loss" not in out:
+    if out != "0\n":
         print "WHOA THERE IS NO INTERNET BRO"
         
 def LOSThread():
