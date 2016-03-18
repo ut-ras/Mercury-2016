@@ -6,6 +6,7 @@
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 <script>
 $(document).ready(function() {
+
   $("#ckLED").change(function() {
     var isChecked = $("#ckLED").is(":checked") ? 1:0; 
     $.ajax({
@@ -13,7 +14,7 @@ $(document).ready(function() {
             type: 'POST',
             data: { strID:'ckLED', strState:isChecked }
     });
-    console.log( "The switch was flipped" );
+    console.log("The switch was flipped");
     });
 
     
@@ -21,10 +22,23 @@ $(document).ready(function() {
         var keyCode = event.keyCode;
         if (keyCode == 87)
         {
-            $("#wbutton").button({
-               disabled:false
-            }); 
+	    $("#wbutton").css("background-color","#F0FFFF");
         }
+	
+	if (keyCode == 65)
+	{
+	    $("#abutton").css("background-color","#F0FFFF");
+	}
+	
+	if (keyCode == 83)
+	{
+	    $("#sbutton").css("background-color","#F0FFFF");
+	}
+	
+	if (keyCode == 68)
+	{
+	    $("#dbutton").css("background-color","#F0FFFF");
+	}
      });
   
     $(window).keydown(function(event){
@@ -68,11 +82,29 @@ $(document).ready(function() {
         
         if (keyCode == 87)
         {
-            $("#wbutton").button({
-                   disabled:true
-            }); 
+	        $("#wbutton").css("background-color","yellow");
         }
-    //alert(event.keyCode);
+	
+	    if (keyCode == 87)
+        {
+	        $("#wbutton").css("background-color","yellow");
+        }
+	
+	    if (keyCode == 65)
+	    {
+	        $("#abutton").css("background-color","yellow");
+	    }
+	
+	    if (keyCode == 83)
+	    {
+	        $("#sbutton").css("background-color","yellow");
+	    }
+	
+	    if (keyCode == 68)
+	    {
+	        $("#dbutton").css("background-color","yellow");
+	    }
+	
         $.ajax({
                 url: '/action',
                 type: 'POST',
@@ -95,13 +127,17 @@ $(document).ready(function() {
     </form>
         <form>
         <label for="switch">Left Speed</label>
-        <input type="textbox" id="leftspeed" value=0>
+        <input type="textbox" id="leftspeed" value=0 style="width:35px; height:35px">
     </form>
     <form>
         <label for="switch">Right Speed</label>
-        <input type="textbox" id="rightspeed" value=0>
+        <input type="textbox" id="rightspeed" value=0 style="width:35px; height:35px">
     </form>
-    <button id="wbutton">W</button>
+    <button id="wbutton" style="width:55px; height:55px; background-color:F0FFFF">W</button>
+    <button id="abutton" style="width:55px; height:55px; background-color:F0FFFF">A</button>
+    <button id="sbutton" style="width:55px; height:55px; background-color:F0FFFF">S</button>
+    <button id="dbutton" style="width:55px; height:55px; background-color:F0FFFF">D</button>     
+       
  </div>
 </div>
 </body>
