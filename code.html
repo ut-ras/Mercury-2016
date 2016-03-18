@@ -7,39 +7,38 @@
 <script>
 $(document).ready(function() {
 
-  $("#ckLED").change(function() {
-    var isChecked = $("#ckLED").is(":checked") ? 1:0; 
-    $.ajax({
-            url: '/action',
-            type: 'POST',
-            data: { strID:'ckLED', strState:isChecked }
+    $("#ckLED").change(function() {
+        var isChecked = $("#ckLED").is(":checked") ? 1:0; 
+        $.ajax({
+                url: '/action',
+                type: 'POST',
+                data: { strID:'ckLED', strState:isChecked }
+        });
+        console.log("The switch was flipped");
     });
-    console.log("The switch was flipped");
-    });
-
     
-     $(window).keyup(function(event){
+    $(window).keyup(function(event){
         var keyCode = event.keyCode;
         if (keyCode == 87)
         {
-	    $("#wbutton").css("background-color","#F0FFFF");
+            $("#wbutton").css("background-color","#F0FFFF");
         }
-	
-	if (keyCode == 65)
-	{
-	    $("#abutton").css("background-color","#F0FFFF");
-	}
-	
-	if (keyCode == 83)
-	{
-	    $("#sbutton").css("background-color","#F0FFFF");
-	}
-	
-	if (keyCode == 68)
-	{
-	    $("#dbutton").css("background-color","#F0FFFF");
-	}
-     });
+    
+        if (keyCode == 65)
+        {
+            $("#abutton").css("background-color","#F0FFFF");
+        }
+        
+        if (keyCode == 83)
+        {
+            $("#sbutton").css("background-color","#F0FFFF");
+        }
+        
+        if (keyCode == 68)
+        {
+            $("#dbutton").css("background-color","#F0FFFF");
+        }
+    });
   
     $(window).keydown(function(event){
         var keyCode = event.keyCode;
@@ -82,29 +81,29 @@ $(document).ready(function() {
         
         if (keyCode == 87)
         {
-	        $("#wbutton").css("background-color","yellow");
+            $("#wbutton").css("background-color","yellow");
         }
-	
-	    if (keyCode == 87)
+    
+        if (keyCode == 87)
         {
-	        $("#wbutton").css("background-color","yellow");
+            $("#wbutton").css("background-color","yellow");
         }
-	
-	    if (keyCode == 65)
-	    {
-	        $("#abutton").css("background-color","yellow");
-	    }
-	
-	    if (keyCode == 83)
-	    {
-	        $("#sbutton").css("background-color","yellow");
-	    }
-	
-	    if (keyCode == 68)
-	    {
-	        $("#dbutton").css("background-color","yellow");
-	    }
-	
+    
+        if (keyCode == 65)
+        {
+            $("#abutton").css("background-color","yellow");
+        }
+    
+        if (keyCode == 83)
+        {
+            $("#sbutton").css("background-color","yellow");
+        }
+    
+        if (keyCode == 68)
+        {
+            $("#dbutton").css("background-color","yellow");
+        }
+    
         $.ajax({
                 url: '/action',
                 type: 'POST',
@@ -113,6 +112,7 @@ $(document).ready(function() {
     });
 });
 </script>
+
 </head>
 <body>
 <div data-role="page">
@@ -137,7 +137,6 @@ $(document).ready(function() {
     <button id="abutton" style="width:55px; height:55px; background-color:F0FFFF">A</button>
     <button id="sbutton" style="width:55px; height:55px; background-color:F0FFFF">S</button>
     <button id="dbutton" style="width:55px; height:55px; background-color:F0FFFF">D</button>     
-       
  </div>
 </div>
 </body>
