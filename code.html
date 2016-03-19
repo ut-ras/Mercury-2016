@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<script src="script_min.js"></script>
 <script>
 $(document).ready(function() {
 
@@ -117,6 +118,11 @@ $(document).ready(function() {
 <body>
 <div data-role="page">
   <div data-role="main" class="ui-content">
+    <body onload="setTimeout('init();', 100);">
+        <center>
+            <div><img id="mjpeg_dest" /></div>
+        </center>
+    </body>
     <form>
         <label for="switch">Simple Motor Control</label>
         <input type="checkbox" data-role="flipswitch" name="switch" id="ckLED">
