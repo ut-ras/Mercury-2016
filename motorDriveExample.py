@@ -21,12 +21,33 @@ def control():
         code += line
     return code 
     
-@route('/action', method='POST')
-def action():
-    val = request.forms.get('strState')
-    val2 = request.forms.get('strState2')
-    keyCode = request.forms.get('keyPressed')
-
+@route('/control', method='POST')
+def do_control():
+    keyup = request.forms.get('keyUp')
+    leftspeed = request.forms.get('left')
+    rightspeed = request.forms.get('right')
+    if leftspeed is not None:
+        print "left speed is: " + leftspeed
+        # TODO: Adjust left speed
+    if rightspeed is not None:
+        print "right speed is: " + rightspeed
+        # TODO: Adjust right speed
+    if keyup is not None:
+        print "keyup: " + chr(int(keyup))
+        keyup = chr(int(keyup))
+        if keyup == 'W':
+            # TODO: MOVE FORWARD
+            pass
+        elif keyup == 'A':
+            # TODO: MOVE LEFT
+            pass
+        elif keyup == 'S':
+            # TODO: MOVE BACKWARD 
+            pass
+        elif keyup == 'D':
+            # TODO: MOVE RIGHT
+            pass
+        
     #ser.write('r(0-9),')
     #ser.write('l(0-9)')
 
