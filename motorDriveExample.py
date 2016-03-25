@@ -2,14 +2,21 @@
 from bottle import route, request, run, get
 import threading
 import subprocess
-# import serial
+import serial
 import time
 # import io
 import sys
 # import picamera
 
 # camera = picamera.PiCamera()
-# ser = serial.Serial('/dev/ttyUSB0',9600)
+#ser = serial.Serial('/dev/ttyACM0',9600)
+
+#prabhat added
+#prabhat added
+
+
+ard = serial.Serial('/dev/ttyACM0',9600,timeout=5)
+
 
 CODE_FILE = './code.html'
 
@@ -37,6 +44,13 @@ def do_control():
         keyup = chr(int(keyup))
         if keyup == 'W':
             # TODO: MOVE FORWARD
+            #prabhat added 6 lines lines below
+            ard.flush()
+			ard.write("hello")
+			time.sleep(4)
+			msg = ard.readline()
+		    print ("Message from arduino: ")
+		    print (msg)
             pass
         elif keyup == 'A':
             # TODO: MOVE LEFT
