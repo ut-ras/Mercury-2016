@@ -19,7 +19,7 @@ void loop()
   {
     if (Serial.available() >0)
     {
-      char c = Serial.read();  //gets one byte from serial buffer
+      char c = Serial.readString();  //gets one byte from serial buffer
       readString += c; //makes the string readString
     }
   }

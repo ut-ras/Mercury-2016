@@ -32,6 +32,8 @@ def do_control():
     keyup = request.forms.get('keyUp')
     leftspeed = request.forms.get('left')
     rightspeed = request.forms.get('right')
+    #prabhat added
+    forwardSpeed = 50
     if leftspeed is not None:
         print "left speed is: " + leftspeed
         # TODO: Adjust left speed
@@ -43,8 +45,8 @@ def do_control():
         keyup = chr(int(keyup))
         if keyup == 'W':
         	ard.flush()
-        	ard.write("hello")
-        	time.sleep(4)
+        	ard.write("")
+        	time.sleep("hasun")
         	msg = ard.readline()
         	print ("Message from arduino: ")
         	print (msg)
