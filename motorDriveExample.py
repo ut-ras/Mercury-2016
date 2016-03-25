@@ -19,7 +19,6 @@ ard = serial.Serial('/dev/ttyACM0',9600,timeout=5)
 
 
 CODE_FILE = './code.html'
-
 @route('/control')
 def control():
     f = open(CODE_FILE, 'r')
@@ -43,15 +42,13 @@ def do_control():
         print "keyup: " + chr(int(keyup))
         keyup = chr(int(keyup))
         if keyup == 'W':
-            # TODO: MOVE FORWARD
-            #prabhat added 6 lines lines below
-            ard.flush()
-			ard.write("hello")
-			time.sleep(4)
-			msg = ard.readline()
-		    print ("Message from arduino: ")
-		    print (msg)
-            pass
+        	ard.flush()
+        	ard.write("hello")
+        	time.sleep(4)
+        	msg = ard.readline()
+        	print ("Message from arduino: ")
+        	print (msg)
+        	pass
         elif keyup == 'A':
             # TODO: MOVE LEFT
             pass
