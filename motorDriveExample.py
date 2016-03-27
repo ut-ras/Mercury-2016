@@ -70,11 +70,13 @@ def startWebsiteThread():
     thread.start()
 
 def pingGoogle():
-    process = subprocess.Popen("ping -c 2 -q www.google.com > /dev/null && echo $?", stdout=subprocess.PIPE, \
-                               stderr=subprocess.STDOUT, shell=True)
-    (out, err) = process.communicate()
-    if out != "0\n":
-        print "WHOA THERE IS NO INTERNET BRO"
+    while True:
+        process = subprocess.Popen("ping -c 2 -q www.google.com > /dev/null && echo $?", stdout=subprocess.PIPE, \
+                                    stderr=subprocess.STDOUT, shell=True)
+        (out, err) = process.communicate()
+        if out != "0\n":
+            print "WHOA THERE IS NO INTERNET BRO"
+        time.sleep(2)
         
 def LOSThread():
     thread = threading.Thread(target=pingGoogle, args=())
@@ -82,11 +84,9 @@ def LOSThread():
     thread.start()
 
 def main():
-    startWebsiteThread()
-    while True:
-        LOSThread()
-        # Explicit thread yield
-        time.sleep(2)
+    #startWebsiteThread()
+    LOSThread()
+    run(host='localhost', port=8000)
 
 if __name__=="__main__":
     main()
