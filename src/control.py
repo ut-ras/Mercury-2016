@@ -1,18 +1,9 @@
-#!/usr/bin/python
 from bottle import route, request, run, get
 import threading
 import subprocess
 import serial
 import time
-# import io
 import sys
-# import picamera
-
-# camera = picamera.PiCamera()
-#ser = serial.Serial('/dev/ttyACM0',9600)
-
-#prabhat added
-#prabhat added
 
 
 ard = serial.Serial('/dev/ttyACM1',9600)
@@ -41,7 +32,7 @@ def do_control():
     if rightspeed is not None:
         ard.write('r');
         ard.write(rightspeed)
-        
+
     if keyup is not None:
         print "keyup: " + chr(int(keyup))
         keyup = chr(int(keyup))
@@ -58,13 +49,9 @@ def do_control():
             # TODO: MOVE RIGHT
             pass
 
-    #ser.write('r(0-9),')
-    #ser.write('l(0-9)')
-
-def startWebsiteThread():
-    thread = threading.Thread(target=run, kwargs=dict(host='localhost', port=8000))
-    thread.daemon = True
-    thread.start()
+def serialRead():
+    while True:
+        print ard.readline()
 
 def pingGoogle():
     while True:
@@ -79,10 +66,17 @@ def LOSThread():
     thread = threading.Thread(target=pingGoogle, args=())
     thread.daemon = True
     thread.start()
+def AnalogInputThread():
+    thread = threading.Thread(target=serialRead, args=())
+    thread.daemon = True
+    thread.start()
 
 def main():
     #startWebsiteThread()
     LOSThread()
+    AnalogInputThread()
+
+    # Instead of printing read the line into a variable and display the read in line(a distance measurement) as a text box.
     run(host='localhost', port=8000)
 
 if __name__=="__main__":
