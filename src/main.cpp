@@ -1,113 +1,93 @@
- // /*UT Robotics and Automation Society Mercury 2016 */
- // #include <Arduino.h>
- // #include <Wire.h>
- // #include <Adafruit_MotorShield.h>
- // #include "utility/Adafruit_MS_PWMServoDriver.h"
- //
- // Adafruit_MotorShield AFMS = Adafruit_MotorShield();
- // Adafruit_DCMotor *leftMotor = AFMS.getMotor(1);
- // Adafruit_DCMotor *rightMotor = AFMS.getMotor(2);
- //
- // /*Tracks first byte and byte before that*/
- // char last_read_byte = 0;
- // char current_byte = 0;
- //
- // /*Motor variables*/
- // char left_motor_speed;
- // char right_motor_speed;
- // enum MOTOR_DIRECTION{forward, backward};
- // int motor_direction ;
- //
- //
- // void updateMotors();
- // void leftTurn();
- // void rightTurn();
- //
- // void setup()
- // {
- //   AFMS.begin();
- //   motor_direction = forward;
- //   leftMotor->run(RELEASE);
- //   rightMotor->run(RELEASE);
- //   Serial.begin(9600);   initialize serial communications at 9600 bps
- //    Set the speed to start, from 0 (off) to 255 (max speed)
- //   leftMotor->setSpeed(150);
- //   leftMotor->run(FORWARD);
- //    turn on motor
- //   leftMotor->run(RELEASE);
- //
- //
- // }
- //
- // void loop()
- // {
- //
- //   if(Serial.available() > 0){
- //     last_read_byte = current_byte;
- //     current_byte = Serial.read();  gets a byte off of the serial buffer
- //     /* Serial.print(current_byte);*/
- //
- //     if(current_byte == 'f'){
- //       motor_direction = forward;
- //       Serial.println('w');
- //     }
- //     else if(current_byte == 'r')
- //     {
- //       motor_direction = backward;
- //       Serial.println('s');
- //     }
- //     else if( (0 <= current_byte) && (current_byte <=9))
- //     {
- //       if(last_read_byte == 'l')
- //       {
- //         left_motor_speed = map (current_byte,0,9,0,255);
- //       }
- //       else if (last_read_byte == 'r')
- //       {
- //         right_motor_speed = map (current_byte,0,9,0,255);
- //       }
- //     }
- //     else if(current_byte == 'b')
- //     {
- //       left_motor_speed = 0;
- //       right_motor_speed = 0;
- //     }
- //     else if(current_byte == 'd')
- //     {
- //       /*Recorded 90 degree right turn code*/
- //     }
- //     else if(current_byte == 'a')
- //     {
- //       /*Recorded 90 degree left turn code*/
- //     }
- //   }
- //
- // updateMotors();
- // }
- // void updateMotors()
- // {
- //   /*Set movement direction*/
- //   if(motor_direction == forward)
- //   {
- //     leftMotor -> run(FORWARD);
- //     rightMotor -> run(FORWARD);
- //   }
- //   else
- //   {
- //     leftMotor -> run(BACKWARD);
- //     rightMotor -> run(BACKWARD);
- //   }
- //
- //   /*Update left and right motor speed */
- //   leftMotor  -> setSpeed(left_motor_speed);
- //   rightMotor -> setSpeed(right_motor_speed);
- //
- // }
- // void leftTurn()
- // {
- //   /*TODO add code for a recorded leftTurn*/
- // }
- // void rightTurn()
- // {
- //     /*TODO add code for a recorded rightTurn*/
- // }
+/*
+   This is a test sketch for the Adafruit assembled Motor Shield for Arduino v2
+   It won't work with v1.x motor shields! Only for the v2's with built in PWM
+   control
+
+   For use with the Adafruit Motor Shield v2
+   ---->	http://www.adafruit.com/products/1438
+ */
+
+#include <Wire.h>
+#include <Adafruit_MotorShield.h>
+#include "utility/Adafruit_MS_PWMServoDriver.h"
+
+// Create the motor shield object with the default I2C address
+Adafruit_MotorShield AFMS = Adafruit_MotorShield();
+// Or, create it with a different I2C address (say for stacking)
+// Adafruit_MotorShield AFMS = Adafruit_MotorShield(0x61);
+
+// Select which 'port' M1, M2, M3 or M4. In this case, M1
+Adafruit_DCMotor *myMotor = AFMS.getMotor(3);
+// You can also make another motor on port M2
+//Adafruit_DCMotor *myOtherMotor = AFMS.getMotor(2);
+
+
+/*Motor variables*/
+int left_motor_speed;
+int right_motor_speed;
+/*Tracks first byte and byte before that*/
+char last_read_byte = 0;
+char current_byte = 0;
+
+enum MOTOR_DIRECTION {forward, backward};
+int motor_direction;
+void updateMotors();
+
+void setup() { /**/
+        Serial.begin(9600);     // set up Serial library at 9600 bps
+        Serial.println("Adafruit Motorshield v2 - DC Motor test!");
+
+        AFMS.begin(); // create with the default frequency 1.6KHz
+        //AFMS.begin(1000);  // OR with a different frequency, say 1KHz
+
+        // Set the speed to start, from 0 (off) to 255 (max speed)
+        myMotor->setSpeed(150);
+        myMotor->run(FORWARD);
+        // turn on motor
+        myMotor->run(RELEASE);
+}
+
+void loop() {
+
+        if(Serial.available() > 0) {
+                last_read_byte = current_byte;
+                current_byte = Serial.read();
+                /* gets a byte off of the serial buffer*/
+                Serial.println(current_byte);
+                if(current_byte == 'f') {
+                        motor_direction = forward;
+                }
+                else if(current_byte == 'r') {
+                        motor_direction = backward;
+                }
+                else if( (0x30 <= current_byte) && (current_byte <=0x39))
+                {
+                        current_byte = (current_byte - 0x30);
+                        if(last_read_byte == 'l')
+                        {
+                                left_motor_speed = map (current_byte,0,9,0,255);
+                                Serial.println(left_motor_speed);
+                              }
+                        else if (last_read_byte == 'r')
+                        {
+                                right_motor_speed = map (current_byte,0,9,0,255);
+                                Serial.println(right_motor_speed);
+                        }
+                }
+                updateMotors();
+
+        }
+        /* myMotor->run(RELEASE);*/
+        delay(500);
+}
+void updateMotors(){
+        if(motor_direction == FORWARD)
+        {
+                myMotor->run(FORWARD);
+        }else
+        {
+                myMotor->run(BACKWARD);
+        }
+        myMotor->setSpeed(left_motor_speed);
+        delay(50);
+}

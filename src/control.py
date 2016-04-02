@@ -37,14 +37,11 @@ def do_control():
     if leftspeed is not None:
         ard.write('l');
         ard.write(leftspeed)
-        print "left speed is: " + leftspeed
-        # TODO: Adjust left speed
 
     if rightspeed is not None:
         ard.write('r');
         ard.write(rightspeed)
-        print "right speed is: " + rightspeed
-        # TODO: Adjust right speed
+        
     if keyup is not None:
         print "keyup: " + chr(int(keyup))
         keyup = chr(int(keyup))
