@@ -3,8 +3,21 @@
 #include <Adafruit_MotorShield.h>
 #include "utility/Adafruit_MS_PWMServoDriver.h"
 
+
+
+void updateMotorDirection();
+void updateLeftMotorSpeed();
+void updateRightMotorSpeed();
+void makeLeftTurn();
+void makeRightTurn();
+
+
 Adafruit_MotorShield AFMS = Adafruit_MotorShield();
-Adafruit_DCMotor *myMotor = AFMS.getMotor(3);
+Adafruit_DCMotor *right_front_motor = AFMS.getMotor(1);
+Adafruit_DCMotor *left_front_motor = AFMS.getMotor(2);
+Adafruit_DCMotor *left_back_motor = AFMS.getMotor(3);
+Adafruit_DCMotor *right_back_motor = AFMS.getMotor(4);
+
 
 /*Motor Variables*/
 int left_motor_speed;
@@ -16,15 +29,16 @@ char current_byte = 0;
 
 enum MOTOR_DIRECTION {forward, backward};
 int motor_direction;
-void updateMotors();
 
-void setup() { 
-        Serial.begin(9600); 
+void setup() {
+        Serial.begin(9600);
         Serial.println("Adafruit Motorshield v2 - DC Motor test!");
-        AFMS.begin(); 
-        myMotor->setSpeed(150);
-        myMotor->run(FORWARD);
-        myMotor->run(RELEASE);
+        AFMS.begin();
+
+        left_front_motor->run(RELEASE);
+        right_front_motor->run(RELEASE);
+        left_back_motor->run(RELEASE);
+        right_back_motor->run(RELEASE);
 }
 
 void loop() {
@@ -34,11 +48,13 @@ void loop() {
                 current_byte = Serial.read();
                 /* gets a byte off of the serial buffer*/
                 Serial.println(current_byte);
-                if(current_byte == 'f') {
+                if(current_byte == 'w') {
                         motor_direction = forward;
+                        updateMotorDirection();
                 }
-                else if(current_byte == 'r') {
+                else if(current_byte == 's') {
                         motor_direction = backward;
+                        updateMotorDirection();
                 }
                 else if( (0x30 <= current_byte) && (current_byte <=0x39))
                 {
@@ -47,27 +63,53 @@ void loop() {
                         {
                                 left_motor_speed = map (current_byte,0,9,0,255);
                                 Serial.println(left_motor_speed);
-                              }
-                        else if (last_read_byte == 'r')
+                        }
+                        if (last_read_byte == 'r')
                         {
                                 right_motor_speed = map (current_byte,0,9,0,255);
                                 Serial.println(right_motor_speed);
                         }
                 }
-                updateMotors();
+                else if(current_byte == 'd'){
+                  makeLeftTurn();
+                }
+                else if(current_byte == 'a'){
+                  makeRightTurn();
+                }
+                else if(current_byte == 'b'){
+                  makeLeftTurn();                  
+                }
 
         }
-        /* myMotor->run(RELEASE);*/
-        delay(500);
+        delay(100);
 }
-void updateMotors(){
+void updateMotorDirection(){
         if(motor_direction == FORWARD)
         {
-                myMotor->run(FORWARD);
+                left_front_motor->run(FORWARD);
+                right_front_motor->run(FORWARD);
+                left_back_motor->run(FORWARD);
+                right_back_motor->run(FORWARD);
         }else
         {
-                myMotor->run(BACKWARD);
+                left_front_motor->run(BACKWARD);
+                right_front_motor->run(BACKWARD);
+                left_back_motor->run(BACKWARD);
+                right_back_motor->run(BACKWARD);
         }
-        myMotor->setSpeed(left_motor_speed);
-        delay(50);
+}
+void updateLeftMotorSpeed(){
+  left_front_motor->setSpeed(left_motor_speed);
+  left_back_motor->setSpeed(left_motor_speed);
+}
+void updateRightMotorSpeed(){
+  right_front_motor->setSpeed(right_motor_speed);
+  left_back_motor->setSpeed(left_motor_speed);
+}
+void makeRightTurn(){
+  //TODO Jerry: write code for a recorded right turn
+}
+void makeLeftTurn(){
+  //TODO Jerry: write code for a recorded left turn
+
 }

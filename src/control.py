@@ -6,7 +6,7 @@ import time
 import sys
 
 
-ard = serial.Serial('/dev/ttyACM1',9600)
+#ard = serial.Serial('/dev/ttyACM0',9600)
 
 
 CODE_FILE = './code.html'
@@ -26,33 +26,42 @@ def do_control():
     #prabhat added
 
     if leftspeed is not None:
-        ard.write('l');
-        ard.write(leftspeed)
-
+        #ard.write('l');
+        #ard.write(leftspeed)
+        print "left"
     if rightspeed is not None:
-        ard.write('r');
-        ard.write(rightspeed)
-
+        #ard.write('r');
+        #ard.write(rightspeed)
+        print "right"
     if keyup is not None:
         print "keyup: " + chr(int(keyup))
         keyup = chr(int(keyup))
         if keyup == 'W':
-            ard.write('f');
+            print "W"
+            #ard.write('f');
         elif keyup == 'A':
+            #ard.write('a');
+            print "A"
             # TODO: MOVE LEFT
             pass
         elif keyup == 'S':
             # TODO: MOVE BACKWARD
-            ard.write('r')
+            print "S"
+            #ard.write('r')
             pass
         elif keyup == 'D':
             # TODO: MOVE RIGHT
+            print "D"
+            #ard.write('d');
             pass
-
+        elif keyup == "F":
+            # TODO BREAK BOTH WHEELS
+            print "F"
+            #ard.write('b');
 def serialRead():
     while True:
-        print ard.readline()
-
+        #print ard.readline()
+        x = 0
 def pingGoogle():
     while True:
         process = subprocess.Popen("ping -c 2 -q www.google.com > /dev/null && echo $?", stdout=subprocess.PIPE, \
