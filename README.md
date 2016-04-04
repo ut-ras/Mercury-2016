@@ -11,29 +11,28 @@ The purpose of this page is to document progress and code for the 2016 Mercury t
 * [Project Timeline](#project-timeline)
 
 ####Becoming a Contributor
-Please contact __Judson Daniels__ or __Luke Chou__ to be added as a contributor. _Students must be a member of the the UT RAS 2016 Mercury Team in order to push changes to this repository._ 
+Please contact __Judson Daniels__ or __Luke Chou__ to be added as a contributor. _Students must be a member of the the UT RAS 2016 Mercury Team in order to push changes to this repository._
 
 ####Important Links
 
-* [Google Drive]( https://drive.google.com/folderview?id=0B1K3QXwfZ4aoUG10X3B3WUM3NjQ&usp=sharing) - contains official rules, budget sheets, planning, etc. 
+* [Google Drive]( https://drive.google.com/folderview?id=0B1K3QXwfZ4aoUG10X3B3WUM3NjQ&usp=sharing) - contains official rules, budget sheets, planning, etc.
 * [OSU Mercury Website](https://mercury.okstate.edu/) - official OSU website that contains more information about the competition.
 
 ## Team Members
 
 The Mercury team is made of several members of the UT Robotics and Automation Society. The table below documents team leaders for Mercury 2016 for communication purposes.
 
-| Name              | Area Responsible | 
+| Name              | Area Responsible |
 | ----------------- | ---------------- |
-| Hasun Amarasekara | Committee Head   | 
+| Hasun Amarasekara | Committee Head   |
 | Selma Wanna       | Software Lead    |
 | Judson Daniels    | Mechanical Lead  |
-| Margaret Tumbokon | Embedded Lead    |
 
 
 __Notice:__ we are looking for someone with audio/visual experience to lead the developement of the video presentation.
 
 ## Project Timeline
- 
+
 ####A student once said:
 
 > I don't know what I could be working on.
@@ -61,10 +60,10 @@ Don't make these mistakes! We must avoid these mentalities since there will alwa
 | 29 Jan | MS.SW.001    | ROS packages installed, Loss of Signal test | ROS Installed, LOS pending              |
 |        | PR.ME.001    | Motors and wheels                           | Incomplete                              |
 |        | PR.ES.001    | Camera, board should arrive                 | _In discussion_                         |
-| 05 Feb | DR.ME.001    | Covers preliminary chassis and arm design   | Incomplete                              | 
+| 05 Feb | DR.ME.001    | Covers preliminary chassis and arm design   | Incomplete                              |
 | 27 Feb | MS.SW.002	| Software design finalized					  | Software layers defined, begin coding   |
 | 		 | MS.ME.001    | All mechanical designs finalized			  | Review all designs, begin construction  |
-|		 | MS.ES.002	| TBD 										  | 										|	
+|		 | MS.ES.002	| TBD 										  | 										|
 | 18 Mar | MS.SW.003	| Software build Complete  					  |											|
 |		 | MS.ME.002    | Build finished, begin testing  			  |											|
 | 16 Apr | Competition  |											  |											|
