@@ -107,9 +107,10 @@ void updateRightMotorSpeed(){
   left_back_motor->setSpeed(left_motor_speed);
 }
 void makeRightTurn(){
-  //TODO Jerry: write code for a recorded right turn
+  right_front_motor->setSpeed(-right_motor_speed);
+  left_back_motor->setSpeed(left_motor_speed);
 }
 void makeLeftTurn(){
-  //TODO Jerry: write code for a recorded left turn
-
+  right_front_motor->setSpeed(right_morot_speed);
+  left_back_motor->setSpeed(-left_motor_speed);
 }
