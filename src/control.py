@@ -15,7 +15,7 @@ import sys
 #prabhat added
 
 
-ard = serial.Serial('/dev/ttyACM0',9600)
+ard = serial.Serial('/dev/ttyACM1',9600)
 
 
 CODE_FILE = './code.html'
