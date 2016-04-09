@@ -5,7 +5,6 @@ import subprocess
 import time
 import sys
 
-
 #ard = serial.Serial('/dev/ttyACM0',9600)
 
 
@@ -30,9 +29,8 @@ def do_control():
         #ard.write(leftspeed)
         print "left"
     if rightspeed is not None:
-        #ard.write('r');
-        #ard.write(rightspeed)
-        print "right"
+        ard.write('r');
+        ard.write(rightspeed)
     if keyup is not None:
         print "keyup: " + chr(int(keyup))
         keyup = chr(int(keyup))
@@ -46,8 +44,7 @@ def do_control():
             pass
         elif keyup == 'S':
             # TODO: MOVE BACKWARD
-            print "S"
-            #ard.write('r')
+            ard.write('b')
             pass
         elif keyup == 'D':
             # TODO: MOVE RIGHT
