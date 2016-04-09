@@ -1,7 +1,7 @@
 from bottle import route, request, run, get
 import threading
 import subprocess
-import serial
+#import serial
 import time
 import sys
 
@@ -58,10 +58,13 @@ def do_control():
             # TODO BREAK BOTH WHEELS
             print "F"
             #ard.write('b');
+
 def serialRead():
     while True:
-        #print ard.readline()
-        x = 0
+        # print ard.readline() 
+        # TODO: Print this value to the web browser, Prabhat
+        val = 69
+
 def pingGoogle():
     while True:
         process = subprocess.Popen("ping -c 2 -q www.google.com > /dev/null && echo $?", stdout=subprocess.PIPE, \
