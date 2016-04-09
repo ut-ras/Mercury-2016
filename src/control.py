@@ -9,7 +9,7 @@ import sys
 # import picamera
 
 # camera = picamera.PiCamera()
-#ser = serial.Serial('/dev/ttyACM0',9600)
+#ser = serial.Serial('/dev/ttyACM1',9600)
 
 #prabhat added
 #prabhat added
@@ -41,7 +41,6 @@ def do_control():
     if rightspeed is not None:
         ard.write('r');
         ard.write(rightspeed)
-
     if keyup is not None:
         print "keyup: " + chr(int(keyup))
         keyup = chr(int(keyup))
@@ -52,7 +51,7 @@ def do_control():
             pass
         elif keyup == 'S':
             # TODO: MOVE BACKWARD
-            ard.write('r')
+            ard.write('b')
             pass
         elif keyup == 'D':
             # TODO: MOVE RIGHT

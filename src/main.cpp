@@ -14,8 +14,8 @@
 // Create the motor shield object with the default I2C address
 Adafruit_MotorShield AFMS = Adafruit_MotorShield();
 
-Adafruit_DCMotor *left_back_motor = AFMS.getMotor(2);
-Adafruit_DCMotor *left_front_motor = AFMS.getMotor(1);
+Adafruit_DCMotor *left_back_motor = AFMS.getMotor(1);
+Adafruit_DCMotor *left_front_motor = AFMS.getMotor(2);
 Adafruit_DCMotor *right_back_motor = AFMS.getMotor(3);
 Adafruit_DCMotor *right_front_motor = AFMS.getMotor(4);
 
@@ -36,6 +36,7 @@ void updateMotors();
 void updateMotorDirection();
 void updateLeftMotors();
 void updateRightMotors();
+void startMotors();
 
 void setup() {
         Serial.begin(9600); // set up Serial library at 9600 bps
@@ -43,23 +44,13 @@ void setup() {
 
         AFMS.begin(); // create with the default frequency 1.6KHz
 
-        /* Set the speed to start, from 0 (off) to 255 (max speed)*/
-
-    /*    right_back_motor->setSpeed(0);
-        right_back_motor->run(FORWARD);
-        right_front_motor->setSpeed(0);
-        right_front_motor->run(FORWARD);
-
-        left_back_motor->setSpeed(0);
-        left_back_motor->run(FORWARD);
-        left_front_motor->setSpeed(0);
-        left_front_motor->run(FORWARD);*/
 
         /* turn on the motors */
         right_back_motor->run(RELEASE);
         right_front_motor->run(RELEASE);
         left_back_motor->run(RELEASE);
         left_front_motor->run(RELEASE);
+        startMotors();
 }
 
 void loop() {
@@ -73,7 +64,7 @@ void loop() {
                         motor_direction = forward;
                         updateMotorDirection();
                 }
-                if(current_byte == 'r') {
+                if(current_byte == 'b') {
                         motor_direction = backward;
                         updateMotorDirection();
                 }
@@ -109,7 +100,7 @@ void updateRightMotors(){
         right_back_motor->setSpeed(right_motor_speed);
         right_front_motor->setSpeed(right_motor_speed);
         updateMotorDirection();
-        //delay(50);
+
 }
 void updateMotorDirection(){
         if(motor_direction == forward)
@@ -126,4 +117,15 @@ void updateMotorDirection(){
                 left_back_motor->run(BACKWARD);
                 left_front_motor->run(BACKWARD);
         }
+}
+
+void startMotors(){
+        right_back_motor->run(FORWARD);
+        right_front_motor->run(FORWARD);
+        left_back_motor->run(FORWARD);
+        left_front_motor->run(FORWARD);
+        left_back_motor->setSpeed(4);
+        left_front_motor->setSpeed(4);
+        right_back_motor->setSpeed(4);
+        right_front_motor->setSpeed(4);
 }
