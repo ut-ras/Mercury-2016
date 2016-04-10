@@ -82,7 +82,7 @@ def LOSThread():
 def main():
     #startWebsiteThread()
     LOSThread()
-    run(host='localhost', port=8000)
+    run(host='10.146.122.19', port=8000)
 
 if __name__=="__main__":
     main()
