@@ -26,8 +26,19 @@ $(document).ready(function() {
                 document.getElementById("sweepbutton").innerHTML = "Sweep (y) OFF";
                 $("#sweepbutton").css("background-color", "#F0FFFF");
             }
+            document.getElementById("rightspeed").value = rightspeed + 1;
+            $.ajax({
+                    url: '/control',
+                    type: 'POST',
+                    data: {sweepval: sweep}
+            });
         }
-
+        
+        if (keyCode == 70)
+        {
+            $("#forwards").css("background-color", "#F0FFFF");
+        }
+        
         if (keyCode == 73)
         {
             $("#ibutton").css("background-color","#F0FFFF");
@@ -43,7 +54,12 @@ $(document).ready(function() {
         {
             prime2 = false;
             $("#primebuttonb").css("background-color", "#F0FFFF");
-        }        
+        }
+        
+        if(keyCode == 66)
+        {
+            $("#brakes").css("background-color", "#F0FFFF");
+        }     
 
         if (keyCode == 90)
         {
@@ -55,34 +71,14 @@ $(document).ready(function() {
             $("#kbutton").css("background-color","#F0FFFF");
         }
     
-        if (keyCode == 76)
-        {
-            $("#lbutton").css("background-color","#F0FFFF");
-        }
-    
-        if (keyCode == 74)
-        {
-            $("#jbutton").css("background-color","#F0FFFF");
-        }
-    
         if (keyCode == 87)
         {
             $("#wbutton").css("background-color","#F0FFFF");
         }
     
-        if (keyCode == 65)
-        {
-            $("#abutton").css("background-color","#F0FFFF");
-        }
-    
         if (keyCode == 83)
         {
             $("#sbutton").css("background-color","#F0FFFF");
-        }
-        
-        if (keyCode == 68)
-        {
-            $("#dbutton").css("background-color","#F0FFFF");
         }
      });
   
@@ -91,14 +87,14 @@ $(document).ready(function() {
         document.getElementById("throughput").value = keyCode;
         if (keyCode == 73)
         {
-            var leftspeed = parseInt(document.getElementById("leftspeed").value);
-            if (leftspeed < 9)
+            var rightspeed = parseInt(document.getElementById("rightspeed").value);
+            if (rightspeed < 10)
             {
-                document.getElementById("leftspeed").value = leftspeed + 1;
+                document.getElementById("rightspeed").value = rightspeed + 1;
                 $.ajax({
                     url: '/control',
                     type: 'POST',
-                    data: {left: document.getElementById("leftspeed").value}
+                    data: {right: document.getElementById("rightspeed").value}
                 });
             }
             $("#ibutton").css("background-color","yellow");
@@ -106,14 +102,14 @@ $(document).ready(function() {
 
         if (keyCode == 75)
         {
-            var leftspeed = parseInt(document.getElementById("leftspeed").value);
-            if (leftspeed > 0)
+            var rightspeed = parseInt(document.getElementById("rightspeed").value);
+            if (rightspeed > -10)
             {
-                document.getElementById("leftspeed").value = leftspeed - 1;
+                document.getElementById("rightspeed").value = rightspeed - 1;
                 $.ajax({
                     url: '/control',
                     type: 'POST',
-                    data: {left: document.getElementById("leftspeed").value}
+                    data: {right: document.getElementById("rightspeed").value}
                 });
             }
             $("#kbutton").css("background-color","yellow");
@@ -130,63 +126,70 @@ $(document).ready(function() {
             prime2 = true;
             $("#primebuttonb").css("background-color", "yellow");
         }
+        
+        if (keyCode == 70)
+        {
+            $("#forwards").css("background-color", "yellow");
+        }
+        
+        if (keyCode == 66)
+        {
+            document.getElementById("rightspeed").value = 0;
+            $.ajax({
+                    url: '/control',
+                    type: 'POST',
+                    data: {right: document.getElementById("rightspeed").value}
+            });
+            document.getElementById("leftspeed").value = 0;
+            $.ajax({
+                    url: '/control',
+                    type: 'POST',
+                    data: {left: document.getElementById("leftspeed").value}
+            });
+            $("#brakes").css("background-color", "yellow");
+        }
 
         if ( keyCode == 32)
         {
             if (prime1 && prime2)
             {
+                $.ajax({
+                        url: '/control',
+                        type: 'POST',
+                        data: {fire: true}
+                });
                $("#firebeanbag").css("background-color", "red"); 
             }
         }     
 
-        if (keyCode == 76)
-        {
-            var rightspeed = parseInt(document.getElementById("rightspeed").value);
-            if (rightspeed < 9)
-            {
-                document.getElementById("rightspeed").value = rightspeed + 1;
-                $.ajax({
-                    url: '/control',
-                    type: 'POST',
-                    data: {right: document.getElementById("rightspeed").value}
-                });
-            }
-            $("#lbutton").css("background-color","yellow");
-        }
-    
-        if (keyCode == 74)
-        {
-            var rightspeed = parseInt(document.getElementById("rightspeed").value);
-            if (rightspeed > 0)
-            {
-                document.getElementById("rightspeed").value = rightspeed - 1;
-                $.ajax({
-                    url: '/control',
-                    type: 'POST',
-                    data: {right: document.getElementById("rightspeed").value}
-                });
-            }
-            $("#jbutton").css("background-color","yellow");
-        }
-
         if (keyCode == 87)
         {
+            var leftspeed = parseInt(document.getElementById("leftspeed").value);
+            if (leftspeed < 10)
+            {
+                document.getElementById("leftspeed").value = leftspeed + 1;
+                $.ajax({
+                    url: '/control',
+                    type: 'POST',
+                    data: {left: document.getElementById("leftspeed").value}
+                });
+            }
             $("#wbutton").css("background-color","yellow");
-        }
-    
-        if (keyCode == 65)
-        {
-            $("#abutton").css("background-color","yellow");
         }
         
         if (keyCode == 83)
         {
+            var leftspeed = parseInt(document.getElementById("leftspeed").value);
+            if (leftspeed > -10)
+            {
+                document.getElementById("leftspeed").value = leftspeed - 1;
+                $.ajax({
+                    url: '/control',
+                    type: 'POST',
+                    data: {left: document.getElementById("leftspeed").value}
+                });
+            }
             $("#sbutton").css("background-color","yellow");
-        }
-        
-        if (keyCode == 68)
-        {
-            $("#dbutton").css("background-color","yellow");
         }
         
         $.ajax({
@@ -205,50 +208,45 @@ $(document).ready(function() {
         <label for="switch">Throughput</label>
         <input type="textbox" id="throughput">
     </form>
-    <div style="width:100px; height:60px; position:absolute; top:400; right: 200">
+    <div style="width:100px; height:60px; position:absolute; top:330; left:70px">
     <form>
         <label for="switch">Left Speed</label>
         <input type="textbox" id="leftspeed" value=0 style="width:35px; height:35px">
     </form>
     </div>
-    <div style="width:100px; height:60px; position:absolute; top:462; right:200">
+    <div style="width:100px; height:60px; position:absolute; top:330; left:160px">
     <form>
         <label for="switch">Right Speed</label>
         <input type="textbox" id="rightspeed" value=0 style="width:35px; height:35px">
     </form>
     </div>
-    <div id="w" style="width:60px; height:60px; position:absolute; left:70px; top:400px;">
+    <div id="w" style="width:60px; height:60px; position:absolute; left:8px; top:300px;">
     <button id="wbutton" style="width:55px; height:55px; background-color:F0FFFF">W</button>
     </div>
-    <div id="a" style="width:60px; height:60px; position:absolute; left:8px; top:462px;">
-    <button id="abutton" style="width:55px; height:55px; background-color:F0FFFF">A</button>
-    </div>
-    <div id="s" style="width:60px; height:60px; position:absolute; left:70px; top:462px;">
+    <div id="s" style="width:60px; height:60px; position:absolute; left:8px; top:362px;">
     <button id="sbutton" style="width:55px; height:55px; background-color:F0FFFF">S</button>
     </div>
-    <div id="d" style="width:60px; height:60px; position:absolute; left:132px; top:462px;">
-    <button id="dbutton" style="width:55px; height:55px; background-color:F0FFFF">D</button>     
-    </div>
-    <div id="i" style="width:60px; height:60px; position:absolute; right:70px; top:400px;">
+    <div id="i" style="width:60px; height:60px; position:absolute; left:255px; top:300px;">
     <button id="ibutton" style="width:55px; height:55px; background-color:F0FFFF">I</button>
     </div>
-    <div id="j" style="width:60px; height:60px; position:absolute; right:132px; top:462px;">
-    <button id="jbutton" style="width:55px; height:55px; background-color:F0FFFF">J</button>
-    </div>
-    <div id="k" style="width:60px; height:60px; position:absolute; right:70px; top:462px;">
+    <div id="k" style="width:60px; height:60px; position:absolute; left:255px; top:362px;">
     <button id="kbutton" style="width:55px; height:55px; background-color:F0FFFF">K</button>
     </div>
-    <div id="l" style="width:60px; height:60px; position:absolute; right:8px; top:462px;">
-    <button id="lbutton" style="width:55px; height:55px; background-color:F0FFFF">L</button>     
-    </div>
-    <div id="primea" style="width:150px; height:60px; position:absolute; right:325px; top:462px;">
+    <div id="primea" style="width:150px; height:60px; position:absolute; right:325px; top:362px;">
     <button id="primebuttona" style="width:150px; height:55px; background-color:F0FFFF">Prime (p)</button>
     </div> 
-    <div id="primeb" style="width:150px; height:60px; position:absolute; right:490px; top:462px;">
+    <div id="primeb" style="width:150px; height:60px; position:absolute; right:490px; top:362px;">
     <button id="primebuttonb" style="width:150px; height:55px; background-color:F0FFFF">Prime (z)</button>
     </div>
-    <div id="Fire" style="width:350px; height:60px; position:absolute; right:665px; top:462px;">
-    <button id="firebeanbag" style="width:350px; height:55px; background-color:f0ffff">FIRE (spacebar)</button> 
+    <div id="Fire" style="width:300px; height:60px; position:absolute; right:665px; top:362px;">
+    <button id="firebeanbag" style="width:300px; height:55px; background-color:f0ffff">FIRE (spacebar)</button> 
+    </div>
+    <div id="brake" style="width:300px; height:60px; position:absolute; right:970px; top:362px;">
+    <button id="brakes" style="width:300px; height:55px; background-color:f0ffff">Brake (B)</button> 
+    </div>
+    </div>
+    <div id="forward" style="width:300px; height:60px; position:absolute; right:970px; top:295px;">
+    <button id="forwards" style="width:300px; height:55px; background-color:f0ffff">Forward (F)</button> 
     </div>  
     <div id="sweep" style="width:200px; height:60px; position:absolute; right:50px; top:50px;">
     <button id="sweepbutton" style="width:200px; height:55px; background-color:f0ffff">Sweep (y) OFF</button> 

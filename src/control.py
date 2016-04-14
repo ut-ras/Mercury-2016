@@ -22,6 +22,15 @@ def do_control():
     keyup = request.forms.get('keyUp')
     leftspeed = request.forms.get('left')
     rightspeed = request.forms.get('right')
+    sweepval = request.forms.get('sweepval')
+    fire = request.forms.get('fire') 
+
+    if fire:
+        #TODO: FIRE THE CANNON
+        pass
+    if sweepval:
+        #TODO: SWEEP
+        pass
 
     if leftspeed is not None:
         ard.write('l');
